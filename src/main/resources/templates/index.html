@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:utext="${pageTitle}"></title>
+    <!--    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>-->
+</head>
+<body>
+<h1 th:utext="${pageTitle}"></h1>
+
+<a th:href="@{/tasksModel}">To-Do App</a>
+</body>
+</html>

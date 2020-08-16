@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8"/>
+    <title>tasks List</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<h1>tasks List</h1>
+<div>
+    <nobr>
+        <a th:href="@{/tasks/add}">Add Task</a> |
+        <a th:href="@{/}">Back to Index</a> |
+        <a th:href="@{/}">Search TAsk</a>
+    </nobr>
+</div>
+<br/>
+<br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        <tr th:each="task : ${task}">
+            <td th:utext="${task.id}">...</td>
+            <!--            <td>-->
+            <!--                <a th:href="@{/tasks/{taskId}(taskId=${task.Id)}" th:utext="${task.Id">...</a>-->
+            <!--            </td>-->
+            <td th:utext="${task.taskName}">...</td>
+            <td th:utext="${task.description}">...</td>
+            <td th:utext="${task.startDate}">...</td>
+            <td th:utext="${task.endDate}">...</td>
+            <!--            <td>-->
+            <!--                <a th:href="@{/tasks/{taskId}(taskId=${task.Id)}" th:utext="${task.taskName}">...</a>-->
+            <!--            </td>-->
+            <td th:utext="${task.description}">...</td>
+            <td>
+                <a th:href="@{/task/edit/{taskId}(taskId=${task.id})}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<br/>
+<br/>
+<!--
+<div>
+    <nobr>
+        <span th:if="${hasPrev}"><a th:href="@{/contacts?page={prev}(prev=${prev})}">Prev</a>&nbsp;&nbsp;&nbsp;</span>
+        <span th:if="${hasNext}"><a th:href="@{/contacts?page={next}(next=${next})}">Next</a></span>
+    </nobr>
+</div>
+-->
+</body>
+</html>
